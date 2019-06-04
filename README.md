@@ -8,5 +8,5 @@ So I decided to create my own wordlist which contains passwords specifically hac
 The passwords in this list are not arranges in any order or frequency of their usage.
 
 Sources of passwords:
-Facebook(phishing)
+phishing,
 Login credentials of an Institution.
