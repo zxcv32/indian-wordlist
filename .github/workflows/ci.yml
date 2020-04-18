@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Sorting
+      run: |
+        sort indian-hacked-passwords > sorted-indian-hacked-passwords
+
+    - name: Gitback
+      run: | 
+        git config --global user.email "ci@zxcv32.com"
+        git config --global user.name "CI zxcV32"
+        git remote add github "https://github.com/zxcV32/indian-wordlist.git"
+        git add .
+        git commit -m "Sorted"
+        git push github master
