@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  main:
     runs-on: ubuntu-latest
     
     steps:
@@ -13,7 +13,9 @@ jobs:
 
     - name: Sorting
       run: |
-        sort indian-hacked-passwords > sorted-indian-hacked-passwords
+        sort indian-passwords > indian-passwords-sorted
+        while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < indian-passwords >> indian-passwords-length8-20
+        sort indian-passwords-length8-20 > indian-passwords-length8-20-sorted
 
     - name: Gitback
       run: | 
