@@ -17,10 +17,10 @@ jobs:
 
     - name: Pipeline
       run: |
-        rm indian-passwords-length8-20 indian-passwords-length8-20-sorted
+        rm $LENGTH_8_20_FILE $LENGTH_8_20_SORTED_FILE
         sort indian-passwords > indian-passwords-sorted
-        while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < ${{ MAIN_FILE }} >> ${{ LENGTH_8_20_FILE }}
-        sort ${{LENGTH_8_20_FILE}} > ${{ LENGTH_8_20_SORTED_FILE }}
+        while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < $MAIN_FILE >> $LENGTH_8_20_FILE
+        sort $LENGTH_8_20_FILE > $LENGTH_8_20_SORTED_FILE
 
     - name: Gitback
       run: | 
