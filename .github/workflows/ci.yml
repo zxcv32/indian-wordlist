@@ -10,17 +10,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-      env: 
-        MAIN_FILE: indian-passwords
-        LENGTH_8_20_FILE: indian-passwords-length8-20
-        LENGTH_8_20_SORTED_FILE: indian-passwords-length8-20-sorted
 
     - name: Pipeline
       run: |
-        rm $LENGTH_8_20_FILE $LENGTH_8_20_SORTED_FILE
+        rm indian-passwords-length8-20 indian-passwords-length8-20-sorted
         sort indian-passwords > indian-passwords-sorted
-        while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < $MAIN_FILE >> $LENGTH_8_20_FILE
-        sort $LENGTH_8_20_FILE > $LENGTH_8_20_SORTED_FILE
+        while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < indian-passwords >> indian-passwords-length8-20
+        sort indian-passwords-length8-20 > indian-passwords-length8-20-sorted
 
     - name: Gitback
       run: | 
