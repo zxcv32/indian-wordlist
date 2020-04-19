@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Sorting
+    - name: Pipeline
       run: |
         sort indian-passwords > indian-passwords-sorted
         while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < indian-passwords >> indian-passwords-length8-20
@@ -23,5 +23,5 @@ jobs:
         git config --global user.name "CI zxcV32"
         git remote add github "https://github.com/zxcV32/indian-wordlist.git"
         git add .
-        git commit -m "Sorted"
+        git commit -m "Commit by Pipeline"
         git push github master
