@@ -1,4 +1,4 @@
-IndianWordlist ![Logo](logo.svg "Logo" =48x)
+Indian-Wordlist <img src="logo.svg" alt="logo" width="48">
 ===
 ![GitHub](https://img.shields.io/github/license/zxcv32/indian-wordlist?label=License&style=flat-square)
 ![GitHub forks](https://img.shields.io/github/forks/zxcv32/indian-wordlist?logo=github&label=Fork&style=flat-square)
@@ -62,4 +62,4 @@ passwords are associated with shall be published.
 
 ![GitHub contributors](https://img.shields.io/github/contributors-anon/zxcv32/indian-wordlist?label=Contributors&logo=github&style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/zxcv32/indian-wordlist?label=Last%20Commit&logo=github&style=flat-square)
 
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-pull-requests.svg =256x)](https://forthebadge.com )
+<img src="https://forthebadge.com/images/badges/powered-by-pull-requests.svg" alt="forthebadge" width="256px">
