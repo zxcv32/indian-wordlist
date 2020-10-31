@@ -7,7 +7,7 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
 
@@ -19,10 +19,10 @@ jobs:
         sort indian-passwords-length8-20 > indian-passwords-length8-20-sorted
 
     - name: Gitback
-      run: | 
+      run: |
         git config --global user.email "ci@zxcv32.com"
         git config --global user.name "CI zxcV32"
         git remote add github "https://github.com/zxcV32/indian-wordlist.git"
         git add .
-        git commit -m "Commit by Pipeline"
+        git commit -m "Auto commit by pipeline"
         git push github master
