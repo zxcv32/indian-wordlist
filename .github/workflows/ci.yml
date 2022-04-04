@@ -17,6 +17,14 @@ jobs:
         sort indian-passwords > indian-passwords-sorted
         while read -r line; do chars=${#line}; if [[ $chars -ge 8 ]] && [[ $chars -le 20 ]]; then echo $line; fi; done < indian-passwords >> indian-passwords-length8-20
         sort indian-passwords-length8-20 > indian-passwords-length8-20-sorted
+        
+        # Generate stats
+        rm -f STATS.md
+        echo "|wc -l|\n|---|" > STATS.md
+        wc -l indian-passwords | sed 's/.*/|&|/' >> STATS.md
+        wc -l indian-passwords-length8-20 | sed 's/.*/|&|/' >> STATS.md
+        wc -l indian-passwords-length8-20-sorted | sed 's/.*/|&|/' >> STATS.md
+        wc -l indian-passwords-sorted | sed 's/.*/|&|/' >> STATS.md
 
     - name: Gitback
       run: |
