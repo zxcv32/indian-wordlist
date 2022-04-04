@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   main:
@@ -25,4 +25,4 @@ jobs:
         git remote add github "https://github.com/zxcV32/indian-wordlist.git"
         git add .
         git commit -m "Auto commit by pipeline"
-        git push github master
+        git push github main
