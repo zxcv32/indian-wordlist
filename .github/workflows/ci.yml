@@ -20,7 +20,7 @@ jobs:
         
         # Generate stats
         rm -f STATS.md
-        echo "|wc -l|\n|---|" > STATS.md
+        echo -e "|wc -l|\n|---|" > STATS.md
         wc -l indian-passwords | sed 's/.*/|&|/' >> STATS.md
         wc -l indian-passwords-length8-20 | sed 's/.*/|&|/' >> STATS.md
         wc -l indian-passwords-length8-20-sorted | sed 's/.*/|&|/' >> STATS.md
