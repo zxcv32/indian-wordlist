@@ -1,0 +1,26 @@
+#!/bin/env bash
+
+# Extract indian-wordlist
+tar -xzf /usr/share/indian-wordlist/indian-wordlist.tar.gz -C /usr/share/indian-wordlist/
+rm -f /usr/share/indian-wordlist/indian-wordlist.tar.gz
+
+# Create default wordlists dir if not already exists
+mkdir -p /usr/share/wordlists/
+
+# Create symbolic links in /usr/share/wordlists/
+[ -e /usr/share/indian-wordlist/indian-passwords ] &&
+	ln -sf /usr/share/indian-wordlist/indian-passwords /usr/share/wordlists/indian-passwords
+
+[ -e /usr/share/indian-wordlist/indian-passwords-length8-20 ] &&
+	ln -sf /usr/share/indian-wordlist/indian-passwords-length8-20 /usr/share/wordlists/indian-passwords-length8-20
+
+[ -e /usr/share/indian-wordlist/indian-passwords-length8-20-sorted ] &&
+	ln -sf /usr/share/indian-wordlist/indian-passwords-length8-20-sorted /usr/share/wordlists/indian-passwords-length8-20-sorted
+
+[ -e /usr/share/indian-wordlist/indian-passwords-sorted ] &&
+	ln -sf /usr/share/indian-wordlist/indian-passwords-sorted /usr/share/wordlists/indian-passwords-sorted
+
+printf "Indian Wordlist available here:\n"
+printf "\t/usr/share/wordlists/\n"
+printf "\t/usr/share/indian-wordlist/\n"
+exit 0

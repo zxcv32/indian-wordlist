@@ -1,0 +1,10 @@
+Package: indian-wordlist
+Version: 0.1.0
+Architecture: all
+Essential: no
+Priority: optional
+Section: utils
+Depends: tar
+Maintainer: Ashwani Sharma (https://github.com/zxcV32)
+Homepage: https://github.com/zxcV32/indian-wordlist
+Description: Commonly used passwords in Indian demography
